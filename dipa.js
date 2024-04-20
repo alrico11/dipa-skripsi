@@ -47,7 +47,6 @@ function importFromCSV(file) {
 }
 
 function preprocessTextAndSaveToCSV() {
-    console.log(datasetDokumen)
     if (datasetDokumen[0] != undefined) {
         const customStopwordsFile = 'customstopwords.txt';
         const kataDasarFile = 'katadasar.txt';
@@ -68,10 +67,6 @@ function preprocessTextAndSaveToCSV() {
             const cleanedTokens = tokens.map((token) => {
                 let cleanedToken = token;
                 let isTokenValid = false;
-                if (token == "vs") {
-                    cleanedToken = "versus"
-                    isTokenValid = true;
-                }
                 if (kataDasar[cleanedToken]) {
                     isTokenValid = true;
                 }
